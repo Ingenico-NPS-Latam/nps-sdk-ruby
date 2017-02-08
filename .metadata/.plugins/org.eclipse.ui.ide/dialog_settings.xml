@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExternalProjectImportWizard">
+	</section>
+	<section name="ResourceListSelectionDialogSettings">
+		<item value="360" key="DIALOG_WIDTH"/>
+		<item value="1|Noto Sans|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="652" key="DIALOG_HEIGHT"/>
+		<item value="310" key="DIALOG_X_ORIGIN"/>
+		<item value="-7" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

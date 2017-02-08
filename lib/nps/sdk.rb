@@ -139,5 +139,9 @@ module Nps
       soap_call(Services::SPLIT_AUTHORIZE_2P, params)
     end
 
+    def query_card_details(params)
+      soap_call(Services::QUERY_CARD_DETAILS, params)
+    end
+
   end
 end

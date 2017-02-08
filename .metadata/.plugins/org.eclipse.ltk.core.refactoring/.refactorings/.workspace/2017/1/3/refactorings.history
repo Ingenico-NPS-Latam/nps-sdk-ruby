@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;Ruby&apos;" deleteContents="false" description="Delete resource &apos;Ruby&apos;" element1="/Ruby" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1484649140322"/>&#x0A;<refactoring comment="Delete resource &apos;RubySDK&apos;" deleteContents="false" description="Delete resource &apos;RubySDK&apos;" element1="/RubySDK" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1484649144005"/>
+</session>

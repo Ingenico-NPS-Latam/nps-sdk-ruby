@@ -1,3 +1,4 @@
+require 'certifi'
 module Nps
   class SoapClient
 
@@ -19,8 +20,8 @@ module Nps
       @wsdl = conf.environment
       @open_timeout = conf.o_timeout.nil? ? 5 : conf.o_timeout
       @read_timeout = conf.r_timeout.nil? ? 60 : conf.r_timeout
+      @verify_ssl = conf.verify_ssl.nil? ? true : conf.verify_ssl
       @sanitize = conf.sanitize.nil? ? true : conf.sanitize
-      @verify_ssl = conf.verify_ssl
       @log_level = conf.log_level ? conf.log_level : nil
       @proxy = conf.proxy_url ? conf.proxy_url : nil
       @proxy_username = conf.proxy_username ? @proxy_username : nil
@@ -49,8 +50,7 @@ module Nps
       if @verify_ssl
         ssl_config = {
             ssl_verify_mode: :peer,
-            ssl_cert_file: @cert_file,
-            ssl_cert_key_file: @cert_key
+            ssl_ca_cert_file: Certifi.where
         }
         client_config.merge!(ssl_config)
       end

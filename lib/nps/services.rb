@@ -17,6 +17,7 @@ class Services
   NOTIFY_FRAUD_SCREENING_REVIEW=:notify_fraud_screening_review
   GET_IIN_DETAILS=:get_iin_details
   QUERY_CARD_NUMBER=:query_card_number
+  QUERY_CARD_DETAILS=:query_card_details
   CREATE_PAYMENT_METHOD = :create_payment_method
   CREATE_PAYMENT_METHOD_FROM_PAYMENT =:create_payment_method_from_payment
   RETRIEVE_PAYMENT_METHOD =:retrieve_payment_method
