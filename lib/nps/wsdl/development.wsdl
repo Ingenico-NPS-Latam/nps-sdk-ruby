@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="https://dev.nps.com.ar/ws" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="https://dev.nps.com.ar/ws">
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="https://psp.nps.com.ar/ws" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="https://psp.nps.com.ar/ws">
 <types>
-<xsd:schema targetNamespace="https://dev.nps.com.ar/ws"
+<xsd:schema targetNamespace="https://psp.nps.com.ar/ws"
 >
  <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
  <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
@@ -2454,184 +2454,184 @@
 <binding name="PaymentServicePlatformBinding" type="tns:PaymentServicePlatformPortType">
   <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
   <operation name="PayOnLine_2p">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/PayOnLine_2p" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/PayOnLine_2p" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="Authorize_2p">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/Authorize_2p" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/Authorize_2p" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="BankPayment_2p">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/BankPayment_2p" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/BankPayment_2p" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="SplitPayOnLine_2p">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/SplitPayOnLine_2p" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/SplitPayOnLine_2p" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="SplitAuthorize_2p">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/SplitAuthorize_2p" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/SplitAuthorize_2p" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="PayOnLine_3p">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/PayOnLine_3p" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/PayOnLine_3p" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="SplitPayOnLine_3p">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/SplitPayOnLine_3p" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/SplitPayOnLine_3p" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="Authorize_3p">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/Authorize_3p" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/Authorize_3p" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="SplitAuthorize_3p">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/SplitAuthorize_3p" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/SplitAuthorize_3p" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="BankPayment_3p">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/BankPayment_3p" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/BankPayment_3p" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="CashPayment_3p">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/CashPayment_3p" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/CashPayment_3p" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="Capture">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/Capture" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/Capture" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="Refund">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/Refund" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/Refund" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="GetInstallmentsOptions">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/GetInstallmentsOptions" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/GetInstallmentsOptions" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="CreatePaymentMethodToken">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/CreatePaymentMethodToken" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/CreatePaymentMethodToken" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="RetrievePaymentMethodToken">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/RetrievePaymentMethodToken" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/RetrievePaymentMethodToken" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="RecachePaymentMethodToken">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/RecachePaymentMethodToken" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/RecachePaymentMethodToken" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="CreateClientSession">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/CreateClientSession" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/CreateClientSession" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="CreatePaymentMethod">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/CreatePaymentMethod" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/CreatePaymentMethod" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="CreatePaymentMethodFromPayment">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/CreatePaymentMethodFromPayment" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/CreatePaymentMethodFromPayment" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="RetrievePaymentMethod">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/RetrievePaymentMethod" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/RetrievePaymentMethod" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="UpdatePaymentMethod">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/UpdatePaymentMethod" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/UpdatePaymentMethod" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="DeletePaymentMethod">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/DeletePaymentMethod" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/DeletePaymentMethod" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="CreateCustomer">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/CreateCustomer" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/CreateCustomer" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="RetrieveCustomer">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/RetrieveCustomer" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/RetrieveCustomer" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="UpdateCustomer">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/UpdateCustomer" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/UpdateCustomer" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="DeleteCustomer">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/DeleteCustomer" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/DeleteCustomer" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="SimpleQueryTx">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/SimpleQueryTx" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/SimpleQueryTx" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="QueryCardNumber">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/QueryCardNumber" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/QueryCardNumber" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="QueryCardDetails">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/QueryCardDetails" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/QueryCardDetails" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="QueryTxs">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/QueryTxs" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/QueryTxs" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="GetIINDetails">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/GetIINDetails" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/GetIINDetails" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="ChangeSecretKey">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/ChangeSecretKey" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/ChangeSecretKey" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="FraudScreening">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/FraudScreening" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/FraudScreening" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
   <operation name="NotifyFraudScreeningReview">
-    <soap:operation soapAction="https://dev.nps.com.ar/ws.php/NotifyFraudScreeningReview" style="rpc"/>
-    <input><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-    <output><soap:body use="encoded" namespace="https://dev.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    <soap:operation soapAction="https://psp.nps.com.ar/ws.php/NotifyFraudScreeningReview" style="rpc"/>
+    <input><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="https://psp.nps.com.ar/ws" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
   </operation>
 </binding>
 <service name="PaymentServicePlatform">
   <port name="PaymentServicePlatformPort" binding="tns:PaymentServicePlatformBinding">
-    <soap:address location="https://dev.nps.com.ar:443/ws.php"/>
+    <soap:address location="https://psp.nps.com.ar:443/ws.php"/>
   </port>
 </service>
 </definitions>

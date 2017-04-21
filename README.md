@@ -1,4 +1,5 @@
 #  Ruby SDK
+<%= image_tag '../images/devicon/ruby-original.svg', { :width => '60', :class => 'Ruby Client-side SDK', :alt => '' } %>
 
 ## Availability
 Supports Ruby 2.3 and above

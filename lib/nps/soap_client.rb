@@ -7,16 +7,16 @@ module Nps
         conf.logger = Logger.new(STDOUT)
       end
 
-      if conf.log_level == Logger::DEBUG
+      if conf.log_level != :debug
         conf.logger.formatter = NpsFormatter.new
       end
-      if conf.log_level == Logger::DEBUG and conf.environment == Nps::Environments::PRODUCTION_ENV
+      if conf.log_level == :debug and conf.environment == Nps::Environments::PRODUCTION_ENV
         raise LoggerException
       end  
 
       @key = conf.key
-      @log = conf.log
-      @logger = conf.logger.nil? ? Logger.new(STDOUT) : conf.logger
+      @log = true
+      @logger = conf.logger
       @wsdl = conf.environment
       @open_timeout = conf.o_timeout.nil? ? 5 : conf.o_timeout
       @read_timeout = conf.r_timeout.nil? ? 60 : conf.r_timeout
@@ -37,12 +37,13 @@ module Nps
           logger: @logger,
           open_timeout: @open_timeout,
           read_timeout: @read_timeout,
-          pretty_print_xml: true
+          pretty_print_xml: true,
+          log: @log
       }
 
       if @log_level
         lvl_config = {
-          log_level: @log_level
+          log_level: :debug
         }
         client_config.merge!(lvl_config)
       end
@@ -64,7 +65,6 @@ module Nps
 
       if @proxy_username
         proxy_auth = {
-            #pendiente esto para mañana
           headers: { "Proxy-Authorization" => "Basic #{secret}" }
         }
         client_config.merge!(proxy_auth)
@@ -104,11 +104,11 @@ module Nps
         params = add_secure_hash(params)
       end 
       params = {"Requerimiento" => params}
-      begin
+      #begin
         @client.call(service, message: params).body
-      rescue TimeoutError
-        raise ApiException
-      end
+      #rescue TimeoutError
+      #  raise ApiException
+      #end
     end
   end
 end
