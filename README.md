@@ -79,7 +79,7 @@ npssdk = Nps::Sdk.new(conf)
 
 #Code
 begin
-  #Code o soap call
+  #Code or sdk call
 rescue => e
   puts e.message
 end
