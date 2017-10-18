@@ -1,11 +1,11 @@
 Gem::Specification.new do |s|
   s.name        = 'nps_sdk'
-  s.version     = '1.1.13'
+  s.version     = '1.1.14'
   s.date        = '2016-11-30'
   s.summary     = "SDK!"
   s.description = "Ruby SDK for NPS Services"
-  s.authors     = ["soporte@nps.com.ar"]
-  s.email       = 'soporte@nps.com.ar'
+  s.authors     = ["merchantservices@ingenico.com"]
+  s.email       = 'merchantservices@ingenico.com'
   s.add_runtime_dependency 'savon', '~> 2.11'
   s.files       = ["lib/nps_sdk.rb",
                    "lib/nps/sdk.rb",
