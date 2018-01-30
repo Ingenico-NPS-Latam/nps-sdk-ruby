@@ -1,6 +1,6 @@
 module Nps
   class Utils
-    SDK = {language: 'Ruby', version: RUBY_VERSION}
+    SDK = {language: 'Ruby', version: '1.1.15'}
     API_VERSION = {version: '2.2'}
     CACHE_TTL = 1
     TIMEOUT = 90
