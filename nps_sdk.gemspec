@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = 'nps_sdk'
-  s.version     = '1.1.18'
-  s.date        = '2016-11-30'
+  s.version     = '1.1.19'
+  s.date        = '2018-03-12'
   s.summary     = "SDK!"
   s.description = "Ruby SDK for NPS Services"
   s.authors     = ["merchantservices@ingenico.com"]
