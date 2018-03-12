@@ -7,10 +7,10 @@ module Nps
         conf.logger = Logger.new(STDOUT)
       end
 
-      if conf.log_level != :debug
+      if conf.log_level != :DEBUG
         conf.logger.formatter = NpsFormatter.new
       end
-      if conf.log_level == :debug and conf.environment == Nps::Environments::PRODUCTION_ENV
+      if conf.log_level == :DEBUG and conf.environment == Nps::Environments::PRODUCTION_ENV
         raise LoggerException
       end  
 
