@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'nps_sdk'
-  s.version     = '1.1.16'
+  s.version     = '1.1.17'
   s.date        = '2016-11-30'
   s.summary     = "SDK!"
   s.description = "Ruby SDK for NPS Services"
@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
                    "lib/nps/wsdl/sandbox.wsdl",
                    "lib/nps/wsdl/production.wsdl",
                    "lib/nps/wsdl/development.wsdl",
+                   "lib/nps/version.rb",
                    "lib/nps/conf/sanitize_struc.ini"]
   s.license       = 'MIT'
 end

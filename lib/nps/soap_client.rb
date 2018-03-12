@@ -108,11 +108,11 @@ module Nps
         params = add_secure_hash(params)
       end 
       params = {"Requerimiento" => params}
-      #begin
+      begin
         @client.call(service, message: params).body
-      #rescue TimeoutError
-      #  raise ApiException
-      #end
+      rescue TimeoutError
+        raise ApiException
+      end
     end
   end
 end
