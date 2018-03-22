@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'nps_sdk'
-  s.version     = '1.1.22'
+  s.version     = '1.1.23'
   s.date        = '2018-03-12'
   s.summary     = "SDK!"
   s.description = "Ruby SDK for NPS Services"
@@ -9,6 +9,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'savon', '~> 2.11'
   s.add_runtime_dependency 'httpclient', '~> 2.7.1'
   s.add_runtime_dependency 'certifi', '~> 2018.1', '>= 2018.01.18'
+  s.add_runtime_dependency 'inifile', '~> 3.0'
   s.files       = ["lib/nps_sdk.rb",
                    "lib/nps/sdk.rb",
                    "lib/nps/nps_formatter.rb",
