@@ -127,7 +127,8 @@ you can change the timeout of the request.
 require 'nps_sdk'
 conf = Nps::Configuration.new
 conf.key = "Secret key"
-conf.sanitize = true
+conf.o_timeout = 10
+conf.r_timeout = 30
 ```
 
 Proxy configuration
