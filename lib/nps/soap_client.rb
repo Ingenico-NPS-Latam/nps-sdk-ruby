@@ -79,7 +79,7 @@ module Nps
       concatenated_data = ""
       sorted_hash = params.sort_by{|x,y| x}.to_h
       sorted_hash.each { |key, value|
-        if not value.is_a? ::Hash
+        if not value.is_a? ::Hash and not value.kind_of?(Array)
           concatenated_data = concatenated_data+value.to_s
         end
       }
