@@ -87,6 +87,8 @@ end
 
 ## Advanced configurations
 
+### Logging
+
 Nps SDK allows you to log what’s happening with you request inside of our SDK, it logs by default to stout.
 The SDK uses the custom logger that you use for your project.
 
@@ -98,6 +100,8 @@ conf = Nps::Configuration.new
 conf.logger = Logger.new(STDOUT)
 conf.key = "Secret key"
 ```
+
+### Loglevel
 
 The logging.INFO level will write concise information of the request and will mask sensitive data of the request. 
 The logging.DEBUG level will write information about the request to let developers debug it in a more detailed way.
@@ -112,6 +116,8 @@ conf.logger = Logger.new(STDOUT)
 conf.log_level = Logger::DEBUG
 ```
 
+### Sanitize
+
 Sanitize allows the SDK to truncate to a fixed size some fields that could make request fail, like extremely long name.
 
 ```ruby
@@ -120,6 +126,8 @@ conf = Nps::Configuration.new
 conf.key = "Secret key"
 conf.sanitize = true
 ```
+
+### Timeout
 
 you can change the timeout of the request.
 
@@ -131,7 +139,7 @@ conf.o_timeout = 10
 conf.r_timeout = 60
 ```
 
-Proxy configuration
+### Proxy configuration
 
 ```ruby
 require 'nps_sdk'
