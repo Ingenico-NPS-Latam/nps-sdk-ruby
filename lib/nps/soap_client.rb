@@ -90,7 +90,7 @@ module Nps
     end
 
     def add_extra_data(params)
-      info = {"SdkInfo" => Nps::Utils::SDK[:language] + ' ' + Nps::Version::VERSION}
+      info = {"SdkInfo" => Nps::Utils::SDK[:language] + ' SDK Version: ' + Nps::Version::VERSION}
       if params.key?("psp_MerchantAdditionalDetails")
         params["psp_MerchantAdditionalDetails"] = params["psp_MerchantAdditionalDetails"].merge(info)
       else
