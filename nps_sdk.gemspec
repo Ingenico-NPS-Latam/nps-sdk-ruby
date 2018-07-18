@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'nps_sdk'
-  s.version     = '1.1.24'
+  s.version     = '1.1.25'
   s.date        = '2018-03-12'
   s.summary     = "SDK!"
   s.description = "Ruby SDK for NPS Services"

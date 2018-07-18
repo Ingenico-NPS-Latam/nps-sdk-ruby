@@ -1,5 +1,5 @@
 module Nps
   class Version
-    VERSION = '1.1.24'
+    VERSION = '1.1.25'
   end
 end
