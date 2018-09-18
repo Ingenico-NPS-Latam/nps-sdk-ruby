@@ -1,6 +1,9 @@
 require 'certifi'
+require_relative 'services'
 module Nps
   class SoapClient
+
+
 
     def initialize(conf)
       if conf.logger.nil?
@@ -83,13 +86,28 @@ module Nps
           concatenated_data = concatenated_data+value.to_s
         end
       }
+
+      hmac_sha256 = create_hmac_sha256(concatenated_data)
+      
       concatenated_data = concatenated_data+@key
-      hashed_string = Digest::MD5.hexdigest(concatenated_data)
+      hashed_string = create_md5_hash(concatenated_data)
       params["psp_SecureHash"] = hashed_string
       return params
     end
 
-    def add_extra_data(params)
+    def create_md5_hash(data)
+      return Digest::MD5.hexdigest(data)
+    end
+
+    def create_hmac_sha256(data)
+      return OpenSSL::HMAC.hexdigest('sha256', @key, data)
+    end
+
+    def add_extra_data(params, service)
+      services = Services.new()
+      if services.is_service_in_services_with_additional_details(service)
+        return params
+      end
       info = {"SdkInfo" => Nps::Utils::SDK[:language] + ' SDK Version: ' + Nps::Version::VERSION}
       if params.key?("psp_MerchantAdditionalDetails")
         params["psp_MerchantAdditionalDetails"] = params["psp_MerchantAdditionalDetails"].merge(info)
@@ -100,7 +118,7 @@ module Nps
     end
 
     def soap_call(service, params)
-      params = add_extra_data(params)
+      params = add_extra_data(params, service)
       if @sanitize
         params = Nps::Utils::sanitize(params)
       end

@@ -3,3 +3,4 @@ test_ns.rb
 *.vscode
 lib/nps/wsdl/development.wsdl
 .idea/
+client_session.rb

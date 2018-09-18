@@ -39,6 +39,10 @@ module Nps
       soap_call(Services::BANK_PAYMENT_3P, params)
     end
 
+    def bank_payment_2p(params)
+      soap_call(Services::BANK_PAYMENT_2P, params)
+    end
+
     def capture(params)
       soap_call(Services::CAPTURE, params)
     end

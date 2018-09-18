@@ -5,8 +5,11 @@ class Services
   PAY_ONLINE_3P=:pay_on_line_3p
   AUTHORIZE_3P=:authorize_3p
   SPLIT_PAY_ONLINE_3P=:split_pay_on_line_3p
+  SPLIT_PAY_ONLINE_2P=:split_pay_on_line_2p
   SPLIT_AUTHORIZE_3P=:split_authorize_3p
+  SPLIT_AUTHORIZE_2P=:split_authorize_2p
   CASH_PAYMENT_3P=:cash_payment_3p
+  BANK_PAYMENT_2P=:bank_payment_2p
   BANK_PAYMENT_3P=:bank_payment_3p
   CAPTURE=:capture
   REFUND=:refund
@@ -33,4 +36,38 @@ class Services
   CREATE_CLIENT_SESSION=:create_client_session
   GET_INSTALLMENTS_OPTIONS=:get_installments_options
 
+
+  def is_service_in_services_with_additional_details(service)
+
+    get_merch_det_not_add_services = [
+            QUERY_TXS,
+            REFUND,
+            SIMPLE_QUERY_TX,
+            CAPTURE,
+            CHANGE_SECRET_KEY,
+            NOTIFY_FRAUD_SCREENING_REVIEW,
+            GET_IIN_DETAILS,
+            QUERY_CARD_NUMBER,
+            CREATE_PAYMENT_METHOD,
+            CREATE_PAYMENT_METHOD_FROM_PAYMENT,
+            RETRIEVE_PAYMENT_METHOD,
+            UPDATE_PAYMENT_METHOD,
+            DELETE_PAYMENT_METHOD,
+            CREATE_CUSTOMER,
+            RETRIEVE_CUSTOMER,
+            UPDATE_CUSTOMER,
+            DELETE_CUSTOMER,
+            RECACHE_PAYMENT_METHOD_TOKEN,
+            CREATE_PAYMENT_METHOD_TOKEN,
+            RETRIEVE_PAYMENT_METHOD_TOKEN,
+            CREATE_CLIENT_SESSION,
+            GET_INSTALLMENTS_OPTIONS,
+            QUERY_CARD_DETAILS
+    ]
+
+    return get_merch_det_not_add_services.include? service
+  end
+
 end
+
+
