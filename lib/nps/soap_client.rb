@@ -3,8 +3,6 @@ require_relative 'services'
 module Nps
   class SoapClient
 
-
-
     def initialize(conf)
       if conf.logger.nil?
         conf.logger = Logger.new(STDOUT)
@@ -86,12 +84,8 @@ module Nps
           concatenated_data = concatenated_data+value.to_s
         end
       }
-
-      hmac_sha256 = create_hmac_sha256(concatenated_data)
-      
-      concatenated_data = concatenated_data+@key
-      hashed_string = create_md5_hash(concatenated_data)
-      params["psp_SecureHash"] = hashed_string
+      secure_hash = create_hmac_sha256(concatenated_data)
+      params["psp_SecureHash"] = secure_hash
       return params
     end
 
@@ -101,6 +95,10 @@ module Nps
 
     def create_hmac_sha256(data)
       return OpenSSL::HMAC.hexdigest('sha256', @key, data)
+    end
+
+    def create_hmac_sha512(data)
+      return OpenSSL::HMAC.hexdigest('sha512', @key, data)
     end
 
     def add_extra_data(params, service)
