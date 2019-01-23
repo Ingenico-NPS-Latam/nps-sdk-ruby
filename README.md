@@ -129,7 +129,7 @@ conf.sanitize = true
 
 ### Timeout
 
-You can change the timeout of the request.
+You can change the timeout of the request where o_timeout is ConnectionTimeout and r_timeout is ExecutionTimeout.
 
 ```ruby
 require 'nps_sdk'
