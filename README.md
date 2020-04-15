@@ -149,3 +149,17 @@ conf.proxy_url = "YOUR/PROXY/URL"
 conf.proxy_username = "USERNAME"
 conf.proxy_password = "YOUR_PASSWORD"
 ```
+
+### CustomUrls
+
+Optional configuration which allow you to specify different urls to use as the environment for the SDK.
+
+You need to configure SDKs environment to CustomEnv and create a URLs list which will be used as CustomEnv. The SDK will use the first URL specified in customEnvUrls parameter and try to connect. If the connection cannot be established after several retries, the SDK will proceed with the next url.
+
+```ruby
+require 'nps_sdk'
+conf.key = "Secret key"
+conf = Nps::Configuration.new
+conf.environment = Nps::Environments::CUSTOM_ENV
+conf.custom_env_urls = ["https://first_url.com.ar", "https://second_url.com.ar"]
+```

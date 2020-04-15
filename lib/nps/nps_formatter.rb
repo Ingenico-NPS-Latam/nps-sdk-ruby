@@ -5,7 +5,7 @@ module Nps
 
     def call(severity, time, progname, msg)
       msg = ofuscate(msg)
-      "#{time} - #{severity} - NpsSDK - #{msg2str(msg)}"
+      "#{time} - #{severity} - NpsSDK - #{msg2str(msg)} \n"
     end
 
     def ofuscate_cvc(msg)

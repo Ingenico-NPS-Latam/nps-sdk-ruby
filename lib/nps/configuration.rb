@@ -14,6 +14,7 @@ module Nps
     attr_accessor :proxy_url
     attr_accessor :proxy_username
     attr_accessor :proxy_password
+    attr_accessor :custom_env_urls
 
   end
 end

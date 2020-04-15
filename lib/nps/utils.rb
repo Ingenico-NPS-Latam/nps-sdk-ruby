@@ -4,6 +4,8 @@ module Nps
     API_VERSION = {version: '2.2'}
     CACHE_TTL = 1
     TIMEOUT = 90
+    MAX_CUSTOM_URLS = 2
+    CUSTOM_URL_CONNECTION_TIMEOUT = 3
 
     SANITIZE = {
         'psp_Person.FirstName.max_length' => '128',

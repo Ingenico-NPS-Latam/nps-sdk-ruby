@@ -1,5 +1,7 @@
 require 'certifi'
 require_relative 'services'
+require_relative 'environments'
+require_relative 'utils'
 module Nps
   class SoapClient
 
@@ -13,12 +15,48 @@ module Nps
       end
       if conf.log_level == Logger::DEBUG and conf.environment == Nps::Environments::PRODUCTION_ENV
         raise LoggerException
-      end  
+      end
+
+      if conf.environment.nil?
+        raise MissingEnvironmentException
+      end
+
+      if conf.environment == Nps::Environments::CUSTOM_ENV and conf.custom_env_urls.nil?
+        raise EmptyCustomUrlsWithCustomEnvException
+      end
+
+      if conf.custom_env_urls
+        if conf.environment != Nps::Environments::CUSTOM_ENV
+          raise WrongConfigurationException
+        end
+
+        if conf.custom_env_urls.length > Nps::Utils::MAX_CUSTOM_URLS
+          raise MaxCustomUrlsException
+        end
+
+        if conf.custom_env_urls.kind_of?(Array) and conf.custom_env_urls.empty?
+          raise EmptyCustomUrlsException
+        end
+
+        conf.custom_env_urls.each do |url|
+          # if url =~ /\A#{URI::regexp}\z/
+          #   raise InvalidUrlException.error_message_with_url url
+          # end
+
+          unless url_valid? url
+            raise InvalidUrlException.error_message_with_url url
+          end
+
+          # unless valid_url_1? url
+          #   raise InvalidUrlException.error_message_with_url url
+          # end
+        end
+      end
 
       @key = conf.key
       @log = true
       @logger = conf.logger
-      @wsdl = conf.environment
+      @wsdl = Nps::Environments::get_wsdl(conf.environment)
       @open_timeout = conf.o_timeout.nil? ? 5 : conf.o_timeout
       @read_timeout = conf.r_timeout.nil? ? 60 : conf.r_timeout
       @verify_ssl = conf.verify_ssl.nil? ? true : conf.verify_ssl
@@ -27,15 +65,28 @@ module Nps
       @proxy = conf.proxy_url ? conf.proxy_url : nil
       @proxy_username = conf.proxy_username ? @proxy_username : nil
       @proxy_password = conf.proxy_password ? @proxy_password : nil
+      @custom_env_urls = conf.custom_env_urls ? conf.custom_env_urls : nil
 
       setup
     end
 
+    def url_valid?(url)
+        url = URI.parse(url) rescue false
+        url.kind_of?(URI::HTTP) || url.kind_of?(URI::HTTPS)
+    end
+
+    def valid_url_1?(url)
+      uri = URI.parse(url)
+      uri.is_a?(URI::HTTP) && !uri.host.nil?
+    rescue URI::InvalidURIError
+      false
+    end
+
     def setup
-      client_config = {
+      @client_config = {
           ssl_verify_mode: :none,
-          wsdl: File.join(File.dirname(File.expand_path(__FILE__)), "/wsdl/" + @wsdl),
           logger: @logger,
+          wsdl: File.join(File.dirname(File.expand_path(__FILE__)), "/wsdl/" + @wsdl),
           open_timeout: @open_timeout,
           read_timeout: @read_timeout,
           pretty_print_xml: true,
@@ -46,7 +97,7 @@ module Nps
         lvl_config = {
           log_level: :debug
         }
-        client_config.merge!(lvl_config)
+        @client_config.merge!(lvl_config)
       end
       
       if @verify_ssl
@@ -54,25 +105,22 @@ module Nps
             ssl_verify_mode: :peer,
             ssl_ca_cert_file: Certifi.where
         }
-        client_config.merge!(ssl_config)
+        @client_config.merge!(ssl_config)
       end
 
       if @proxy
         proxy = {
             proxy: @proxy
         }
-        client_config.merge!(proxy)
+        @client_config.merge!(proxy)
       end
 
       if @proxy_username
         proxy_auth = {
           headers: { "Proxy-Authorization" => "Basic #{secret}" }
         }
-        client_config.merge!(proxy_auth)
+        @client_config.merge!(proxy_auth)
       end
-
-
-      @client = Savon.client client_config
 
     end
 
@@ -124,11 +172,43 @@ module Nps
         params = add_secure_hash(params)
       end 
       params = {"Requerimiento" => params}
-      begin
-        @client.call(service, message: params).body
-      rescue TimeoutError
-        raise ApiException
-      end
+
+        if @custom_env_urls
+          internal_connection_timeout = @read_timeout
+          @custom_env_urls.each do |url|
+            begin
+              start_time = Time.now
+              @client_config.merge!({endpoint: url,
+                                     open_timeout: Nps::Utils::CUSTOM_URL_CONNECTION_TIMEOUT,
+                                     read_timeout: internal_connection_timeout})
+              @client = Savon.client @client_config
+              @client.call(service, message: params).body
+              break
+            rescue SocketError, HTTPClient::ConnectTimeoutError
+	      if @custom_env_urls.last == url
+      	        raise ApiException
+	      end
+	      @logger.warn("Could not connect to #{url}")
+              finish_time = Time.now
+              delta_time = finish_time - start_time
+              internal_connection_timeout -= delta_time.ceil
+              next
+            rescue HTTPClient::ReceiveTimeoutError
+              raise ApiException
+            rescue StandardError 
+              raise 'An unexpected error occurred'
+            end
+          end
+        else
+          begin
+            @client = Savon.client @client_config
+            @client.call(service, message: params).body
+          rescue HTTPClient::ReceiveTimeoutError
+           raise ApiException
+          rescue StandardError 
+           raise 'An unexpected error occurred'
+         end
+       end
     end
   end
 end
