@@ -25,8 +25,8 @@ module Nps
         end
         environments = [
             PRODUCTION_WSDL,
-            STAGING_WSDL,
             SANDBOX_WSDL,
+            STAGING_WSDL,
             DEVELOPMENT_WSDL,
             CUSTOM_WSDL
         ]
