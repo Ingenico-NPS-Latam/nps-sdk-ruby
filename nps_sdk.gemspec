@@ -1,15 +1,21 @@
+# coding: utf-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+
+require "nps/version"
+
 Gem::Specification.new do |s|
   s.name        = 'nps_sdk'
-  s.version     = '1.3.0'
+  s.version     = Nps::VERSION
   s.date        = '2018-03-12'
   s.summary     = "SDK!"
   s.description = "Ruby SDK for NPS Services"
   s.authors     = ["merchantservices@ingenico.com"]
   s.email       = 'merchantservices@ingenico.com'
-  s.add_runtime_dependency 'savon', '~> 2.11'
+  s.add_runtime_dependency 'savon', '~> 2.12.1'
   s.add_runtime_dependency 'httpclient', '~> 2.7.1'
   s.add_runtime_dependency 'certifi', '~> 2018.1', '>= 2018.01.18'
-  s.add_runtime_dependency 'inifile', '~> 3.0'
+  s.add_runtime_dependency 'inifile', '~> 3.0.0'
   s.files       = ["lib/nps_sdk.rb",
                    "lib/nps/sdk.rb",
                    "lib/nps/nps_formatter.rb",

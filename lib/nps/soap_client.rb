@@ -99,7 +99,7 @@ module Nps
         }
         @client_config.merge!(lvl_config)
       end
-      
+
       if @verify_ssl
         ssl_config = {
             ssl_verify_mode: :peer,
@@ -154,7 +154,7 @@ module Nps
       if services.is_service_in_services_with_additional_details(service)
         return params
       end
-      info = {"SdkInfo" => Nps::Utils::SDK[:language] + ' SDK Version: ' + Nps::Version::VERSION}
+      info = {"SdkInfo" => Nps::Utils::SDK[:language] + ' SDK Version: ' + Nps::VERSION}
       if params.key?("psp_MerchantAdditionalDetails")
         params["psp_MerchantAdditionalDetails"] = params["psp_MerchantAdditionalDetails"].merge(info)
       else
@@ -170,8 +170,8 @@ module Nps
       end
       unless params.has_key? 'psp_ClientSession'
         params = add_secure_hash(params)
-      end 
-      params = {"Requerimiento" => params}
+      end
+      params = { requerimiento: params }
 
         if @custom_env_urls
           internal_connection_timeout = @read_timeout
@@ -195,7 +195,7 @@ module Nps
               next
             rescue HTTPClient::ReceiveTimeoutError
               raise ApiException
-            rescue StandardError 
+            rescue StandardError
               raise 'An unexpected error occurred'
             end
           end
@@ -205,7 +205,7 @@ module Nps
             @client.call(service, message: params).body
           rescue HTTPClient::ReceiveTimeoutError
            raise ApiException
-          rescue StandardError 
+          rescue StandardError
            raise 'An unexpected error occurred'
          end
        end
